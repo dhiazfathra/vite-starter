@@ -50,32 +50,9 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-
-    # Cache node_modules to speed up subsequent runs
-    - name: Cache node_modules
-      uses: actions/cache@v4
-      id: node-modules-cache
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-${{ matrix.node-version }}-
 
     - name: Install dependencies
-      if: steps.node-modules-cache.outputs.cache-hit != 'true'
       run: npm ci
-
-    # Cache Vitest
-    - name: Cache Vitest
-      uses: actions/cache@v4
-      with:
-        path: |
-          node_modules/.cache/vitest
-        key: ${{ runner.os }}-vitest-${{ matrix.node-version }}-${{ hashFiles('**/vitest.config.ts') }}-${{ hashFiles('**/*.test.ts') }}-${{ hashFiles('**/*.test.tsx') }}
-        restore-keys: |
-          ${{ runner.os }}-vitest-${{ matrix.node-version }}-
-
     - name: Run tests with coverage
       run: npm run test:cov
 
@@ -102,29 +79,9 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: 22.x
-        cache: 'npm'
-
-    # Cache node_modules
-    - name: Cache node_modules
-      uses: actions/cache@v4
-      id: node-modules-cache
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-22.x-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-22.x-
 
     - name: Install dependencies
-      if: steps.node-modules-cache.outputs.cache-hit != 'true'
       run: npm ci
-
-    # Cache build output
-    - name: Cache build
-      uses: actions/cache@v4
-      with:
-        path: dist
-        key: ${{ runner.os }}-build-${{ github.sha }}
-
     - name: Build with bundle analysis
       run: npm run build
 
