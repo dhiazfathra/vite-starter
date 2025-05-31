@@ -9,7 +9,7 @@ on:
       - 'package.json'
       - 'package-lock.json'
       - 'tsconfig.json'
-      - 'jest.config.js'
+      - 'vitest.config.ts'
       - '.github/workflows/test.yml'
   pull_request:
     branches: [ main, master ]
@@ -19,7 +19,7 @@ on:
       - 'package.json'
       - 'package-lock.json'
       - 'tsconfig.json'
-      - 'jest.config.js'
+      - 'vitest.config.ts'
       - '.github/workflows/test.yml'
 
 # Limit concurrent runs of the same workflow
