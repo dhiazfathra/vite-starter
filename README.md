@@ -4,10 +4,10 @@
   <a href="https://codecov.io/gh/dhiazfathra/vite-starter">
     <img src="https://codecov.io/gh/dhiazfathra/vite-starter/graph/badge.svg" alt="Coverage" />
   </a>
+  <a href="https://github.com/dhiazfathra/vite-starter/actions/workflows/semantic-release.yml">
+    <img src="https://github.com/dhiazfathra/vite-starter/actions/workflows/semantic-release.yml/badge.svg" alt="Semantic Release" />
+  </a>
 </p>
-
-
-[![Semantic Release](https://github.com/dhiazfathra/vite-starter/actions/workflows/semantic-release.yml/badge.svg)](https://github.com/dhiazfathra/vite-starter/actions/workflows/semantic-release.yml)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
