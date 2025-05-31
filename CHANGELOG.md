@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/dhiazfathra/vite-starter/compare/v1.0.0...v1.1.0) (2025-05-31)
+
+
+### Features
+
+* add spacing between logo hover rules in App.css ([#12](https://github.com/dhiazfathra/vite-starter/issues/12)) ([ae1a37f](https://github.com/dhiazfathra/vite-starter/commit/ae1a37f827517bfd30917ac2de0ca0e83a11ca2a))
+
 # 1.0.0 (2025-05-31)
 
 
